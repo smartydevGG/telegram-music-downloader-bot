@@ -64,7 +64,7 @@ class Chat:
                     'i am a music downloader bot. You can call me shikai or shikamaru:\n\n'
                     '"*/music* _song name_"  or\n'
                     '"*/music* _musician name - song name_"\n\n'
-                    'Are my commands. So, let's get started! 🎶',
+                    'Are my commands 🎶',
             
             'spotify_input_error':"‼️ *Oops! I can't process Spotify links!*\n"
                     'Try: "*/music* _song name_"\n'
