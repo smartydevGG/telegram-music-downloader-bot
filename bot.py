@@ -60,13 +60,13 @@ class Chat:
         self.message_id = msg['message_id']
 
         self.messages = {
-            'start':'🤖 Hello, '+ self.user_name +'!\n\n'
-                    '📩 Send me:\n\n'
+            'start':'Hoii, '+ self.user_name +'!\n\n'
+                    'i am a music downloader bot. You can call me shikai or shikamaru:\n\n'
                     '"*/music* _song name_"  or\n'
                     '"*/music* _musician name - song name_"\n\n'
-                    'to order some music. 🎶',
+                    'Are my commands. So, let's get started! 🎶',
             
-            'spotify_input_error':"‼️ *Oops! The bot doesn't support Spotify links!*\n"
+            'spotify_input_error':"‼️ *Oops! I can't process Spotify links!*\n"
                     'Try: "*/music* _song name_"\n'
                     'or: "*/music* _musician name - song name_"',
 
@@ -109,14 +109,14 @@ class Chat:
             file_name = file_name.replace('"', '')
 
             self.send_message(f"🎵 {Music.get_title(self, result)}\n🔗 {Music.get_link(self, result)}")
-            downloading_message = self.send_message('⬇️ Downloading... \n_(this may take a while.)_')
+            downloading_message = self.send_message('uploading... \n_(this may take a while.)_')
 
             Music.download_music(self, file_name, Music.get_link(self, result))
 
             try:
                 self.send_audio(file_name)
                 self.delete_message(downloading_message)
-                self.send_message('✅ Sucess!')
+                self.send_message('✅ Uploaded woohoo!')
                 print ("\nSucess!\n")
             except:
                 print("\nError")
